@@ -55,7 +55,8 @@ void PrintList(ListNode *headlist)			   // Распечатать список с адресами элемент
 {
 	ListNode *ptl;
 	ptl = headlist;
-	while (ptl != NULL && ptl->next != NULL)
+	if (headlist == NULL) return;
+	while (ptl->next != NULL)
 	{
 		cout << ptl << " Value " << ptl->v << "   Next adress is " << ptl->next << endl;
 		ptl = ptl->next;
@@ -68,7 +69,7 @@ ListNode* FindVal(int v, ListNode *headlist) 	    // Найти адрес элемента в спис
 {
 	ListNode *ptl;
 	ptl = headlist;
-	while (ptl != NULL&&ptl->v != v)
+	while (ptl != NULL && ptl->v != v)
 		ptl = ptl->next;
 	return ptl;
 }
@@ -89,10 +90,11 @@ ListNode* FinedByNum(int n, ListNode *headlist)
 {
 	ListNode *ptl;
 	ptl = headlist;
-	if (ptl != NULL&&ptl->next != NULL)
-		for (int i = 0; i < n; i++)								// Номер элемента отсчитывается от нуля!
+	if (ptl != NULL && ptl->next != NULL)
+		for (int i = 0; i < n; i++)						// Номер элемента отсчитывается от нуля!
 			ptl = ptl->next;
-	else ptl = NULL;
+	else
+		ptl = NULL;
 	return ptl;
 }
 
@@ -119,7 +121,7 @@ void DeleteNode(ListNode *ptl1, ListNode *headlist)		 	        // Удалить текущи
 	delete ptl1;
 }
 
-void ClearList(ListNode *headlist)								          // Очистить список
+void ClearList(ListNode *headlist)					        // Очистить список
 {
 	if (headlist == NULL) return;
 	ClearList(headlist->next);
@@ -142,4 +144,16 @@ ListNode* ReverseList(ListNode *headlist)					  // Перевернуть список
 		ptl = ptl->next;
 	} while (ptl != NULL);
 	return newhead;
+}
+
+void DeleteList(ListNode *&headlist)					// Удаление списка
+{
+	ListNode *ptl;
+	while (headlist != NULL)
+	{
+		ptl = headlist;
+		headlist = ptl->next;
+		delete ptl;
+	}
+
 }

@@ -43,4 +43,7 @@ void ClearList(ListNode *headlist);
 // Перевернуть список
 ListNode* ReverseList(ListNode *headlist);
 
+// Удаление списка №2
+void DeleteList(ListNode *&headlist);
+
 #endif
