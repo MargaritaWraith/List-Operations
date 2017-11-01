@@ -60,22 +60,26 @@ ListNode* FindVal(int v, ListNode *headlist)	   // Найти адрес элемента в списке
 	return ptl;
 }
 
-void InsertNext(int v, ListNode *ptl)		  // Вставить следующий элемент
+void InsertNext(int v, ListNode *ptl)		          // Вставить следующий элемент
 {
-
+	ListNode *ptl1 = ptl->next;
+	ListNode *ins = new ListNode;
+	ins->v = v;
+	ins->next = ptl1;
+	ptl->next = ins;
 }
 
-ListNode FinedByNum(int n)							 // Поиск по номеру элемента
-{
-
-}
-
-ListNode FinedPrev()									  // Поиск предыдущего элемента
-
-void DeleteNode()								  // Удалить текущий элемент
-
-
-void ClearList()								  // Очистить список
-
-
-void ReverseList(ListNode *headlist)					  // Перевернуть список
+//ListNode FinedByNum(int n)							   // Поиск по номеру элемента
+//{
+//
+//}
+//
+//ListNode FinedPrev()									  // Поиск предыдущего элемента
+//
+//void DeleteNode()							   	       // Удалить текущий элемент
+//
+//
+//void ClearList()								          // Очистить список
+//
+//
+//void ReverseList(ListNode *headlist)					  // Перевернуть список

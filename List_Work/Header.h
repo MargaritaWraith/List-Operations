@@ -13,7 +13,5 @@ void ListDel(ListNode *headlist);
 void PrintList(ListNode *headlist);
 ListNode* FindVal(int v, ListNode *headlist);
 void InsertNext(int v, ListNode *ptl);
-int FinedByNum(int n);
-int FinedPrev();
 
 #endif
