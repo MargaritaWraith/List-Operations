@@ -61,7 +61,7 @@ void PrintList(ListNode *headlist)			   // Распечатать список с адресами элемент
 		ptl = ptl->next;
 	}
 
-	cout << ptl << " Value " << ptl->v << "   Next adress is " << ptl->next << endl;
+	cout << ptl << " Value " << ptl->v << "   Next adress is " << ptl->next << endl << endl;
 }
 
 ListNode* FindVal(int v, ListNode *headlist) 	    // Найти адрес элемента в списке
@@ -85,7 +85,7 @@ void InsertNext(int v, ListNode *ptl)		          // Вставить следующий элемент
 }
 
 // Поиск по номеру элемента
-ListNode* FinedByNum(int n, ListNode *headlist)				   
+ListNode* FinedByNum(int n, ListNode *headlist)
 {
 	ListNode *ptl;
 	ptl = headlist;
@@ -111,12 +111,12 @@ void DeleteNode(ListNode *ptl1, ListNode *headlist)		 	        // Удалить текущи
 	ListNode *ptl;
 	ptl = headlist;
 
-	if (ptl == NULL || ptl1 == NULL || ptl==ptl1) return;
-	
+	if (ptl == NULL || ptl1 == NULL || ptl == ptl1) return;
+
 	while (ptl->next != ptl1)
 		ptl = ptl->next;
 	ptl->next = ptl1->next;
-	delete ptl1;   
+	delete ptl1;
 }
 
 void ClearList(ListNode *headlist)								          // Очистить список
@@ -126,5 +126,20 @@ void ClearList(ListNode *headlist)								          // Очистить список
 	cout << "del" << headlist << ":" << headlist->v << endl;
 	delete headlist;
 }
-//
-//void ReverseList(ListNode *headlist)					  // Перевернуть список
+
+ListNode* ReverseList(ListNode *headlist)					  // Перевернуть список
+{
+	ListNode *ptl, *newhead = NULL, *newptl = NULL;
+	ptl = headlist;
+	if (ptl == NULL) return NULL;
+
+	do
+	{
+		newptl = new ListNode;
+		newptl->v = ptl->v;
+		newptl->next = newhead;
+		newhead = newptl;
+		ptl = ptl->next;
+	} while (ptl != NULL);
+	return newhead;
+}

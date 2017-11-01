@@ -40,4 +40,7 @@ void DeleteNode(ListNode *ptl1, ListNode *headlist);
 // Очистить список
 void ClearList(ListNode *headlist);
 
+// Перевернуть список
+ListNode* ReverseList(ListNode *headlist);
+
 #endif
