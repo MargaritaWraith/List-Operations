@@ -85,8 +85,8 @@ void InsertNext(int v, ListNode *ptl)		          // Вставить следующий элемент
 
 }
 
-// Поиск по номеру элемента
-ListNode* FinedByNum(int n, ListNode *headlist)
+
+ListNode* FinedByNum(int n, ListNode *headlist)		  // Поиск по номеру элемента
 {
 	ListNode *ptl;
 	ptl = headlist;
@@ -155,5 +155,28 @@ void DeleteList(ListNode *&headlist)					// Удаление списка
 		headlist = ptl->next;
 		delete ptl;
 	}
+}
 
+bool InsertPrev(ListNode *ptl, ListNode *&headlist, ListNode *ptli)
+{
+	ListNode *ptlt = FinedPrev(ptl, headlist);
+	if (ptl == NULL || headlist == NULL)
+		return false;
+	if (ptlt == NULL)
+	{
+		if (ptl == headlist)
+		{
+			headlist = ptli;
+			while (ptli->next != NULL)
+				ptli = ptli->next;
+			ptli->next = ptl;
+
+			return true;
+		}
+		else return false;
+	}
+	ptlt->next = ptli;
+	ptli = FinedPrev(NULL, ptli);
+	ptli->next = ptl;
+	return true;
 }

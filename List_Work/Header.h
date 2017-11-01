@@ -46,4 +46,7 @@ ListNode* ReverseList(ListNode *headlist);
 // Удаление списка №2
 void DeleteList(ListNode *&headlist);
 
+// Вставка подсписка перед текущим элементом
+bool InsertPrev(ListNode *ptl, ListNode *&headlist, ListNode *ptli);
+
 #endif
