@@ -15,6 +15,19 @@ void ListFill(ListNode *headlist)			 // Заполнить список
 	}
 }
 
+void ListFillAuto(ListNode *headlist)			 // Заполнить список
+{
+	ListNode *ptl;
+	ptl = headlist;
+	int i = 0;
+	while (ptl != NULL)
+	{
+		ptl->v = i + 7;
+		ptl = ptl->next;
+		i += 13;
+	}
+}
+
 void ListAdd(ListNode *headlist)			  // Добавить в конец списка ещё 1 элемент
 {
 	ListNode *ptl;
@@ -62,17 +75,25 @@ ListNode* FindVal(int v, ListNode *headlist)	   // Найти адрес элемента в списке
 
 void InsertNext(int v, ListNode *ptl)		          // Вставить следующий элемент
 {
+	if (ptl == NULL) return;
 	ListNode *ptl1 = ptl->next;
 	ListNode *ins = new ListNode;
 	ins->v = v;
 	ins->next = ptl1;
 	ptl->next = ins;
+
 }
 
-//ListNode FinedByNum(int n)							   // Поиск по номеру элемента
-//{
-//
-//}
+ListNode* FinedByNum(int n, ListNode *headlist)							   // Поиск по номеру элемента
+{
+	ListNode *ptl;
+	ptl = headlist;
+	if (ptl != NULL&&ptl->next != NULL)
+		for (int i = 0; i < n; i++)										// Номер элемента отсчитывается от нуля!
+			ptl = ptl->next;
+	else ptl = NULL;
+	return ptl;
+}
 //
 //ListNode FinedPrev()									  // Поиск предыдущего элемента
 //
