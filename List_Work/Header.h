@@ -1,3 +1,5 @@
+п»ї// Р—Р°РіРѕР»РѕРІРѕС‡РЅС‹Р№ С„Р°Р№Р»
+
 #ifndef _MYLIBFUN
 #define	_MYLIBFUN
 
@@ -7,46 +9,46 @@ struct ListNode
 	ListNode *next;
 };
 
-// Заполнить список
+// Р—Р°РїРѕР»РЅРёС‚СЊ СЃРїРёСЃРѕРє
 void ListFill(ListNode *headlist);
 
-// Автозаполнение списка
+// РђРІС‚РѕР·Р°РїРѕР»РЅРµРЅРёРµ СЃРїРёСЃРєР°
 void ListFillAuto(ListNode *headlist);
 
-// Добавить элемент в конец списка
+// Р”РѕР±Р°РІРёС‚СЊ СЌР»РµРјРµРЅС‚ РІ РєРѕРЅРµС† СЃРїРёСЃРєР°
 void ListAdd(ListNode *headlist);
 
-// Удалить последний элемент
+// РЈРґР°Р»РёС‚СЊ РїРѕСЃР»РµРґРЅРёР№ СЌР»РµРјРµРЅС‚
 void ListDel(ListNode *headlist);
 
-// Распечатать список
+// Р Р°СЃРїРµС‡Р°С‚Р°С‚СЊ СЃРїРёСЃРѕРє
 void PrintList(ListNode *headlist);
 
-// Найти адрес элемента по его значению
+// РќР°Р№С‚Рё Р°РґСЂРµСЃ СЌР»РµРјРµРЅС‚Р° РїРѕ РµРіРѕ Р·РЅР°С‡РµРЅРёСЋ
 ListNode* FindVal(int v, ListNode *headlist);
 
-// Вставить элемент после текущего по адресу текущего
+// Р’СЃС‚Р°РІРёС‚СЊ СЌР»РµРјРµРЅС‚ РїРѕСЃР»Рµ С‚РµРєСѓС‰РµРіРѕ РїРѕ Р°РґСЂРµСЃСѓ С‚РµРєСѓС‰РµРіРѕ
 void InsertNext(int v, ListNode *ptl);
 
-// Найти элемент по его индексу
+// РќР°Р№С‚Рё СЌР»РµРјРµРЅС‚ РїРѕ РµРіРѕ РёРЅРґРµРєСЃСѓ
 ListNode* FinedByNum(int n, ListNode *headlist);
 
-// Найти предыдущий элемент
+// РќР°Р№С‚Рё РїСЂРµРґС‹РґСѓС‰РёР№ СЌР»РµРјРµРЅС‚
 ListNode* FinedPrev(ListNode *ptl1, ListNode *headlist);
 
-// Удалить текущий элемент
+// РЈРґР°Р»РёС‚СЊ С‚РµРєСѓС‰РёР№ СЌР»РµРјРµРЅС‚
 void DeleteNode(ListNode *ptl1, ListNode *headlist);
 
-// Очистить список
+// РћС‡РёСЃС‚РёС‚СЊ СЃРїРёСЃРѕРє
 void ClearList(ListNode *headlist);
 
-// Перевернуть список
+// РџРµСЂРµРІРµСЂРЅСѓС‚СЊ СЃРїРёСЃРѕРє
 ListNode* ReverseList(ListNode *headlist);
 
-// Удаление списка №2
+// РЈРґР°Р»РµРЅРёРµ СЃРїРёСЃРєР° в„–2
 void DeleteList(ListNode *&headlist);
 
-// Вставка подсписка перед текущим элементом
+// Р’СЃС‚Р°РІРєР° РїРѕРґСЃРїРёСЃРєР° РїРµСЂРµРґ С‚РµРєСѓС‰РёРј СЌР»РµРјРµРЅС‚РѕРј
 bool InsertPrev(ListNode *ptl, ListNode *&headlist, ListNode *ptli);
 
 #endif
