@@ -24,24 +24,30 @@ int main()
 	ListFillAuto(headlist);
 	PrintList(headlist);
 
-	ListNode *insert = NULL;			 // Создание подсписка для вставки
-	insert = new ListNode;
-	ListNode *ptli;
-	ptli = insert;
-	for (int i = 0; i < 2; i++)
-	{
-		ptli->next = new ListNode;
-		ptli = ptli->next;
-	}
-	ptli->next = NULL;
+	//ListNode *insert = NULL;			 // Создание подсписка для вставки
+	//insert = new ListNode;
+	//ListNode *ptli;
+	//ptli = insert;
+	//for (int i = 0; i < 2; i++)
+	//{
+	//	ptli->next = new ListNode;
+	//	ptli = ptli->next;
+	//}
+	//ptli->next = NULL;
 				 
-	ListFillAuto(insert);
-	PrintList(insert);
+	//ListFillAuto(insert);
+	//PrintList(insert);
+
+	ListNode* list1 = NewNode(2);
+
 	
 	ListNode * Node = FinedByNum(2, headlist);
 	cout << Node << endl<<endl;
-	cout<<InsertPrev(Node, headlist, insert)<<endl;
+	cout<<InsertPrev(Node, headlist, list1)<<endl;
 	PrintList(headlist);
+	DeleteNode(Node,headlist);
+	PrintList(headlist);
+
 
 
 //	cout << endl << FindVal(5, headlist) << endl << endl;

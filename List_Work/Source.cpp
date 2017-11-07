@@ -15,6 +15,15 @@ void ListFill(ListNode *headlist)			 // Заполнить список
 	}
 }
 
+// Создание узла списка
+ListNode* NewNode(int v)
+{
+	ListNode * newnode = new ListNode;
+	newnode->next = NULL;
+	newnode->v = v;
+	return newnode;
+}
+
 void ListFillAuto(ListNode *headlist)			 // Заполнить список
 {
 	ListNode *ptl;
@@ -108,17 +117,33 @@ ListNode* FinedPrev(ListNode *ptl1, ListNode *headlist)				  // Поиск пр�
 	return ptl;
 }
 
-void DeleteNode(ListNode *ptl1, ListNode *headlist)		 	        // Удалить текущий элемент
+bool DeleteNode(ListNode *& ptl, ListNode *& headlist)		 	        // Удалить элемент списка
 {
-	ListNode *ptl;
+	if (ptl == NULL || headlist == NULL) return false;	  //передача пустых элементов
+
+	if (ptl == headlist)					   //удаляем голову
+	{
+		headlist = headlist->next;
+		delete ptl;
+		ptl = NULL;
+		return true;
+	}
+
+	if (FinedPrev(ptl, headlist) == NULL) return false;	   //удаляемый элемент не принадлежит текущему списку
+
+	ListNode * ptlPrev = FinedPrev(ptl, headlist);			  //Общий случай
+	ptlPrev->next = ptl->next;
+	delete ptl;
+	ptl = NULL;
+	return true;
+
+	/*ListNode *ptl;
 	ptl = headlist;
-
 	if (ptl == NULL || ptl1 == NULL || ptl == ptl1) return;
-
 	while (ptl->next != ptl1)
 		ptl = ptl->next;
 	ptl->next = ptl1->next;
-	delete ptl1;
+	delete ptl1;*/
 }
 
 void ClearList(ListNode *headlist)					        // Очистить список

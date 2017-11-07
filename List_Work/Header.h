@@ -10,6 +10,9 @@ struct ListNode
 // Заполнить список
 void ListFill(ListNode *headlist);
 
+// Создание узла списка
+ListNode* NewNode(int v);
+
 // Автозаполнение списка
 void ListFillAuto(ListNode *headlist);
 
@@ -35,7 +38,7 @@ ListNode* FinedByNum(int n, ListNode *headlist);
 ListNode* FinedPrev(ListNode *ptl1, ListNode *headlist);
 
 // Удалить текущий элемент
-void DeleteNode(ListNode *ptl1, ListNode *headlist);
+bool DeleteNode(ListNode *&ptl, ListNode *&headlist);
 
 // Очистить список
 void ClearList(ListNode *headlist);
