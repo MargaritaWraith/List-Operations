@@ -16,13 +16,15 @@ public:
 	double Get(int i, int j);
 	void Set(int i, int j, double d);
 	bool FillMatrix();
-	Matrix* AddMatrix(const Matrix &matr);
+	Matrix AddMatrix(const Matrix &matr);
 	Matrix* MulMatrix(const Matrix &matr);
 	void PrintMatrix();
 	Matrix operator+(const Matrix &matr);
 	Matrix operator*(const Matrix &matr);
 	Matrix& operator=(const Matrix &matr);
 	friend void PrintMatrix(const Matrix &matr);
+	double* operator[](int i) { if (i < n) return v[i]; };
+	double& operator()(int i, int j) { return v[i][j]; };
 
 private:
 
