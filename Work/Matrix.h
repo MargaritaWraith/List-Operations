@@ -9,7 +9,7 @@ class Matrix
 public:
 	Matrix();
 	Matrix(int n, int m);
-	Matrix(const Matrix& matrix);
+	Matrix(const Matrix& matr);
 	~Matrix();
 	int GetN() { return n; };
 	int GetM() { return m; };
@@ -20,6 +20,9 @@ public:
 	Matrix* MulMatrix(const Matrix &matr);
 	void PrintMatrix();
 	Matrix operator+(const Matrix &matr);
+	Matrix operator*(const Matrix &matr);
+	Matrix& operator=(const Matrix &matr);
+	friend void PrintMatrix(const Matrix &matr);
 
 private:
 
