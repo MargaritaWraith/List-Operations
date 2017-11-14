@@ -19,11 +19,12 @@ public:
 	Matrix* AddMatrix(const Matrix &matr);
 	Matrix* MulMatrix(const Matrix &matr);
 	void PrintMatrix();
+	Matrix operator+(const Matrix &matr);
 
 private:
 
 };
-void Fun(const Matrix m);
+//void Fun(Matrix m);
 void CheckMatrix();
 
 #endif
