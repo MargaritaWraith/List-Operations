@@ -23,7 +23,9 @@ public:
 	Matrix AddMatrix(const Matrix &matr);
 	Matrix MulMatrix(const Matrix &matr);
 	void PrintMatrix();
+	Matrix operator+(const double chislo);
 	Matrix operator+(const Matrix &matr);
+	Matrix operator-(const Matrix &matr);
 	Matrix operator*(const Matrix &matr);
 	Matrix& operator=(const Matrix &matr);
 	friend void PrintMatrix(const Matrix &matr);
