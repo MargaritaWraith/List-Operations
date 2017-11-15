@@ -16,7 +16,7 @@ public:
 	double Get(int i, int j);
 	void Set(int i, int j, double d);
 	bool InitializeUnitary();
-	//bool TriangleMatrix();
+	bool TriangleMatrix();
 	Matrix Transpose();
 	bool FillMatrix();
 	Matrix AddMatrix(const Matrix &matr);
