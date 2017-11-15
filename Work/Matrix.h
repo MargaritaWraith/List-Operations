@@ -17,7 +17,7 @@ public:
 	void Set(int i, int j, double d);
 	bool FillMatrix();
 	Matrix AddMatrix(const Matrix &matr);
-	Matrix* MulMatrix(const Matrix &matr);
+	Matrix MulMatrix(const Matrix &matr);
 	void PrintMatrix();
 	Matrix operator+(const Matrix &matr);
 	Matrix operator*(const Matrix &matr);
