@@ -25,6 +25,11 @@ public:
 	void PrintMatrix();
 	Matrix operator+(const double chislo);
 	Matrix operator+(const Matrix &matr);
+	Matrix& operator-();
+	Matrix& operator++();
+	Matrix& operator++(int);
+	Matrix& operator--();
+	Matrix& operator--(int);
 	Matrix operator-(const Matrix &matr);
 	Matrix operator*(const Matrix &matr);
 	Matrix& operator=(const Matrix &matr);
