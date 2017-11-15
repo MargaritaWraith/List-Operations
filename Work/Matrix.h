@@ -3,6 +3,7 @@
 
 class Matrix
 {
+protected:	
 	int n;
 	int m;
 	double **v;
@@ -16,10 +17,10 @@ public:
 	double Get(int i, int j);
 	void Set(int i, int j, double d);
 	bool InitializeUnitary();
-	Matrix TriangleMatrix();
-	Matrix Transpose();
-	double Determinant();
-	bool FillMatrix();
+	Matrix& TriangleMatrix();					 // Привести к треугольному виду
+	Matrix Transpose();							 // Транспонировать
+	double Determinant();						 // Детерминант
+	Matrix& FillMatrix();						 // Заполнить простым способом
 	Matrix AddMatrix(const Matrix &matr);
 	Matrix MulMatrix(const Matrix &matr);
 	void PrintMatrix();
@@ -27,9 +28,9 @@ public:
 	Matrix operator+(const Matrix &matr);
 	Matrix& operator-();
 	Matrix& operator++();
-	Matrix& operator++(int);
+	Matrix operator++(int);
 	Matrix& operator--();
-	Matrix& operator--(int);
+	Matrix operator--(int);
 	Matrix operator-(const Matrix &matr);
 	Matrix operator*(const Matrix &matr);
 	Matrix& operator=(const Matrix &matr);
@@ -40,7 +41,19 @@ public:
 private:
 
 };
-//void Fun(Matrix m);
+
+class EMatrix: public Matrix
+{
+
+public:
+	EMatrix();
+	EMatrix(int n);
+	~EMatrix();
+
+private:
+
+};
+
 void CheckMatrix();
 
 #endif
