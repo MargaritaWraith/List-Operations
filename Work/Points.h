@@ -1,5 +1,5 @@
-#ifndef _VIRT_FUNC
-#define	_VIRT_FUNC
+#ifndef _POINTS
+#define	_POINTS
 using namespace std;
 
 class Point2

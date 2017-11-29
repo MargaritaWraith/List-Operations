@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include <iostream>
-#include "VirtualFunc.h"
+#include "Points.h"
 #include <math.h>
 
 using namespace std;
