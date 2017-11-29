@@ -4,13 +4,16 @@
 #include <iostream>
 #include "List.h"
 #include "Matrix.h"
+#include "VirtualFunc.h"
+
 
 
 using namespace std;
 
 int main()
 {		
-	CheckMatrix();
+//	CheckMatrix();
+	CheckPoint();
 
 	cin.get();
 	cin.get();
