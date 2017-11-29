@@ -13,12 +13,16 @@ public:
 	~Point2() {};
 	Point2& operator = (const Point2& pnt);
 	Point2 operator+(const Point2& pnt);
+	Point2 operator-(const Point2& pnt);
 	virtual void Print();
+	virtual double VectorPnt();
+	virtual double VectorLenghtTo(const Point2& pnt);
+
 private:
 
 };
 
-class Point3: public Point2
+class Point3 : public Point2
 {
 public:
 	double z;
@@ -27,7 +31,11 @@ public:
 	Point3(const Point3& pnt) :Point2(pnt), z(pnt.z) { cout << this << " Point3.copy.constr" << endl; };
 	~Point3();
 	Point3& operator = (const Point3& pnt);
-	Point3 operator + (const Point3& pnt);	void Print();
+	Point3 operator + (const Point3& pnt);
+	Point3 operator - (const Point3& pnt);
+	void Print();
+	double VectorPnt();
+	double VectorLenghtTo(const Point3& pnt);
 
 private:
 
@@ -35,7 +43,7 @@ private:
 
 void CheckPoint();
 
-											 
+
 
 
 
