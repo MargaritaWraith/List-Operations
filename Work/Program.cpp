@@ -5,7 +5,8 @@
 #include "List.h"
 #include "Matrix.h"
 #include "Points.h"
-
+#include"Nasledovanie.h"
+#include"Class_List.h"
 
 
 using namespace std;
@@ -13,7 +14,9 @@ using namespace std;
 int main()
 {		
 //	CheckMatrix();
-	CheckPoint();
+//	CheckPoint();
+//	CheckNasledovanie();
+	CheckList();
 
 	cin.get();
 	cin.get();

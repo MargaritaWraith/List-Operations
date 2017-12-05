@@ -2,9 +2,9 @@
 #include <iostream>
 #include "Points.h"
 #include <math.h>
+//#include <string.h>
 
 using namespace std;
-
 
 Point2& Point2::operator= (const Point2& pnt)
 {
@@ -45,6 +45,13 @@ double Point2::VectorLenghtTo(const Point2& pnt)
 	p = *this - pnt;
 	res = p.VectorPnt();
 	return res;
+}
+
+char* Point2::ToString()													 //!!!Warning
+{
+	char* str="1";
+	//sprintf(str, "%g %g", x, y);	 
+	return str;
 }
 
 /* ---------------------------------------------------------------------------- */
@@ -97,12 +104,22 @@ double Point3::VectorLenghtTo(const Point3& pnt)
 	return res;
 }
 
-
+char* Point3::ToString()													   //!!!Warning
+{
+	char* str="1";
+	//sprintf(str, "%g %g %g", x, y, z);
+	return str;
+}
 
 /* ---------------------------------------------------------------------------- */
 void PrintPoint(Point2& pnt)
 {
 	pnt.Print();
+}
+ostream& operator << (ostream& os, BasePoint& pnt)							//!!!Warning
+{
+	os << pnt.ToString();
+	return os;
 }
 
 /* ---------------------------------------------------------------------------- */
@@ -114,18 +131,14 @@ void CheckPoint()
 	p1.Print();
 
 	Point2 p2(3, 4);
-	p2.Print();
-	double vp = p2.VectorPnt();
-
 	p1 = p2;
+
+	
 
 	Point2 p3;
 	p3 = p1 + p2 + p2;
 	PrintPoint(p3);
 	double vp2 = p3.VectorLenghtTo(p2);
-
-
-
 
 
 	Point3 pp1(10, 20, 30);
@@ -137,10 +150,7 @@ void CheckPoint()
 	double vpp = pp2.VectorPnt();
 	double vpp2 = pp3.VectorLenghtTo(pp2);
 
-	cout << vp << "   " << vp2 << endl;
+	cout << vp2 << "   " << vp2 << endl;
 	cout << vpp << "   " << vpp2 << endl;
-
-
-
 
 }

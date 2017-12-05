@@ -144,14 +144,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Class_List.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="Matrix.h" />
+    <ClInclude Include="Nasledovanie.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Points.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Class_List.cpp" />
     <ClCompile Include="Matrix.cpp" />
+    <ClCompile Include="Nasledovanie.cpp" />
     <ClCompile Include="Program.cpp" />
     <ClCompile Include="List.cpp" />
     <ClCompile Include="stdafx.cpp">

@@ -2,7 +2,16 @@
 #define	_POINTS
 using namespace std;
 
-class Point2
+class BasePoint
+{
+public:
+	virtual void Print()=0;
+	virtual char* ToString()=0;
+	friend ostream& operator << (ostream& os, BasePoint& pnt);
+
+};
+
+class Point2 : public BasePoint
 {
 public:
 	double x;
@@ -17,6 +26,7 @@ public:
 	virtual void Print();
 	virtual double VectorPnt();
 	virtual double VectorLenghtTo(const Point2& pnt);
+	char* ToString();
 
 private:
 
@@ -36,6 +46,7 @@ public:
 	void Print();
 	double VectorPnt();
 	double VectorLenghtTo(const Point3& pnt);
+	char* ToString();
 
 private:
 
