@@ -7,6 +7,7 @@
 #include "Points.h"
 #include"Nasledovanie.h"
 #include"Class_List.h"
+#include "Temp.h"
 
 
 using namespace std;
@@ -17,6 +18,7 @@ int main()
 //	CheckPoint();
 //	CheckNasledovanie();
 	//CheckSingleDirList();
+	CheckTemp();
 
 	cin.get();
 	cin.get();
