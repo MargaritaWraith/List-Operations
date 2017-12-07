@@ -3,36 +3,23 @@
 #include "Class_List.h"
 
 	   
-DNode::DNode()
+template <class T>
+void SingleDirList<T>::AddLast(T item) 
 {
-	data = 0;
-	next = NULL;
-}
+	List_Node* pNode = new List_Node();
+	pNode->SetValue(item);
 
-DNode::DNode(double _data)
-{
-	data = _data;
-	next = NULL;
-}
-
-DNode::DNode(const DNode& node)
-{
-	data = node.data;
-	next = node.next;
-}
-
-bool List::AddLastNode(DNode node)
-{
-	DNode* ptl = header;  
-	while (ptl->next != NULL && ptl->next != NULL)
-		ptl->next = ptl->next;
-	ptl->next = node.next;
-	ptl->data = node.data;
-	return true;
-}
-
-
-void CheckList()
-{
-
+	if(pHeader == null)
+	{
+		pHeader = pNode;
+	}
+	else
+	{
+		List_Node<T>* pCurrent = pHeader;
+		while (pCurent->GetNextNode() != null)
+		{
+			pCurrent = pCurrent->GetNextNode();
+		}
+		pCurrent->SetNextNode(pNode);
+	}
 }

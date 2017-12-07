@@ -2,38 +2,40 @@
 #define	_LIST
 using namespace std;
 
-class BaseNode
+template <class T>
+class List_Node
 {
 public:
+	List_Node<T>() {};
+	~List_Node<T>() {};
 
-	BaseNode* next;
-	BaseNode() {};
-	~BaseNode() {};
+	void SetValue(T value) { this->value = value; };
+	T GetValue() { return value; }
+
+	List_Node<T>* GetNextNode() { return pNext; }
+	void SetNextNode(List_Node<T>* pNext) { this->pNext = pNext; }
 private:
+	List_Node<T>* pNext;
+	T value;
 };
 
-class DNode:public BaseNode
+
+template <class T>
+class SingleDirList
 {
 public:
-	double data;
-	DNode();
-	DNode(double _data);
-	DNode(const DNode& node);
-	~DNode() {};
-};
+	SingleDirList<T>() {};
+	~SingleDirList<T>() {};
 
-class List :public DNode
-{
-protected:
-	DNode* header;
-	List() {};
-	~List() {};
-	bool AddLastNode(DNode node);
+	void AddLast(T item);
+	List_Node* GetHeader() { return pHeader; }
+private:
+	List_Node<T>* pHeader;
 };
 
 
 
 
- void CheckList();
+//void CheckSingleDirList() {};
 
 #endif
