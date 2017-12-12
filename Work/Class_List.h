@@ -22,10 +22,6 @@ public:
 	DNode<T>(const DNode<T>& Node);
 	~DNode<T>() {};
 
-	//void Setdata(double data) { this->data = data; };
-	//double Getdata() { return data; }
-	//DNode<T>* GetNextNode() { return pNext; }
-	//void SetNextNode(DNode<T>* pNext) { this->pNext = pNext; }
 
 private:
 	T data;

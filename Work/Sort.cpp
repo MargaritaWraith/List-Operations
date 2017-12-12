@@ -4,45 +4,45 @@
 
 void CheckSort()
 {
-
+	int Array[15] = { 42,3,7,8,5,2,6,9,11,13,15,0,6,1,7 };
+	Sort(Array, 0, 14);
+	for (int i = 0; i < sizeof(Array) / sizeof(int); i++)
+	{
+		cout << Array[i] << "\t";
+	}
 }
 
 void Swap(int* arr, int l, int r)
 {
-	int t;
-	t = arr[l];
+	int t = arr[l];
 	arr[l] = arr[r];
 	arr[r] = t;
 }
-
-
+	  
 int SortM(int* arr, int l, int r, int m)
 {
 	while (l<m || r>m)
 	{
-		while (l < m)
-			if (arr[l] < arr[m]) l++;
-		while (r > m)
-			if (arr[r] >= arr[m]) r--;
+		while (arr[l] < arr[m])
+			l++;
+		while (arr[r] >= arr[m] && r>m)
+			r--;
 		if (l<m && r>m)
 		{
 			Swap(arr, l, r);
 			++l;
 			--r;
 		}
-		else
-		{
-			if (l < m && m == r)
+		else if (l < m && m == r)
 			{
 				Swap(arr, l, m);
 				m = l;
 			}
-			else if (r > m && l == m)
+		else if (r > m && l == m)
 			{
 				Swap(arr, r, m);
 				m = r;
 			}
-		}
 	}
 	return m;
 }

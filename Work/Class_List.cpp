@@ -62,9 +62,9 @@ DNode<T>* SingleDirList<T>::AddLast(T data)
 }
 
 template <class T>
-DNode<T>* SingleDirList<T>::AddFirst(T item)
+DNode<T>* SingleDirList<T>::AddFirst(T data)
 {
-	//DNode<T>* pNode = new DNode<T>(item);
+	//DNode<T>* pNode = new DNode<T>(data);
 	DNode<T>* pNode = new DNode<T>();
 	pNode->data = item;
 
