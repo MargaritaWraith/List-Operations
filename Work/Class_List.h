@@ -3,12 +3,10 @@
 using namespace std;
 void CheckSingleDirList();
 
-//template <class T>
 class BaseNode
 {
 public:
 	BaseNode() { pNext = NULL; };
-	BaseNode(const BaseNode& Node) {};
 	virtual	~BaseNode() {};
 	template <class T> friend class SingleDirList;
 protected:
@@ -20,8 +18,8 @@ class DNode : public BaseNode
 {
 public:
 	DNode<T>() { }
-	DNode<T>(T value) { data = value; };
-	DNode<T>(const DNode<T>& Node) {};
+	DNode<T>(T _data) { data = _data; };
+	DNode<T>(const DNode<T>& Node);
 	~DNode<T>() {};
 
 	//void Setdata(double data) { this->data = data; };
@@ -45,8 +43,8 @@ public:
 	SingleDirList<T>(const SingleDirList<T>& List);
 	~SingleDirList<T>() {};
 
-	DNode<T>* AddFirst(T item);
-	DNode<T>* AddLast(T item);
+	DNode<T>* AddFirst(T data);
+	DNode<T>* AddLast(T data);
 //	DNode* GetHeader() { return pHeader; }
 	void PrintList();
 

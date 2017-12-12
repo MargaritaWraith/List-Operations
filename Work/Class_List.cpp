@@ -2,7 +2,7 @@
 #include <iostream>
 #include "Class_List.h"
 
-void CheckSingleDirList() 
+void CheckSingleDirList()
 {
 	SingleDirList<double>* pList = new SingleDirList<double>();
 	pList->AddLast(3.1415926);
@@ -11,6 +11,11 @@ void CheckSingleDirList()
 	pList->AddLast(2);
 	pList->AddLast(4);
 	pList->PrintList();
+
+	cout << endl;
+
+	SingleDirList<double>* pList2 = new SingleDirList<double>(*pList);
+	pList2->PrintList();
 }
 
 template <class T>
@@ -19,18 +24,21 @@ SingleDirList<T>::SingleDirList(const SingleDirList<T>& List)
 	if (List.pHeader == NULL)	 return;
 	else
 	{
-		pHeader = new DNode<T>();
-
+		pHeader = new DNode<T>(*List.pHeader);
 	}
-
-
-	
 }
 
 template <class T>
-DNode<T>* SingleDirList<T>::AddLast(T item)
+DNode<T>::DNode(const DNode<T>& Node)
 {
-	DNode<T>* pNode = new DNode<T>(item);
+	data = Node.data;							 
+	if (Node.pNext != NULL)	pNext = new DNode<T>(*(DNode<T>*)Node.pNext);
+}
+
+template <class T>
+DNode<T>* SingleDirList<T>::AddLast(T data)
+{
+	DNode<T>* pNode = new DNode<T>(data);
 
 	if (pHeader == NULL) pHeader = pNode;
 	else
@@ -64,11 +72,11 @@ DNode<T>* SingleDirList<T>::AddFirst(T item)
 template <class T>
 void SingleDirList<T>::PrintList()
 {
-	
+
 	DNode<T>* pCurrent = pHeader;
 	while (pCurrent != NULL)
 	{
-		cout << "data=" << pCurrent->data << "\t address=" << pCurrent << "\t next_address=" << pCurrent->pNext<<endl;
+		cout << "data=" << pCurrent->data << "\t address=" << pCurrent << "\t next_address=" << pCurrent->pNext << endl;
 		//pCurrent = (DNode<T>*)pCurrent->pNext;
 		pCurrent = static_cast<DNode<T>*>(pCurrent->pNext);
 	}
