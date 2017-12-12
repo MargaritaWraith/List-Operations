@@ -8,6 +8,7 @@
 #include"Nasledovanie.h"
 #include"Class_List.h"
 #include "Temp.h"
+#include "Sort.h"
 
 
 using namespace std;
@@ -17,8 +18,10 @@ int main()
 //	CheckMatrix();
 //	CheckPoint();
 //	CheckNasledovanie();
-	CheckSingleDirList();
+//	CheckSingleDirList();
 //	CheckTemp();
+
+	CheckSort();
 
 	cin.get();
 	cin.get();

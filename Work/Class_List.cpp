@@ -25,6 +25,14 @@ SingleDirList<T>::SingleDirList(const SingleDirList<T>& List)
 	else
 	{
 		pHeader = new DNode<T>(*List.pHeader);
+		DNode<T>* pNewCurrent = pHeader;
+		DNode<T>* pOldCurrent = List.pHeader;
+		while (pOldCurrent->pNext != NULL)
+		{
+			pNewCurrent->pNext = new DNode<T>(*(DNode<T>*)pOldCurrent->pNext);
+			pNewCurrent = (DNode<T>*)pNewCurrent->pNext;
+			pOldCurrent = (DNode<T>*)pOldCurrent->pNext;
+		}
 	}
 }
 
@@ -32,7 +40,7 @@ template <class T>
 DNode<T>::DNode(const DNode<T>& Node)
 {
 	data = Node.data;							 
-	if (Node.pNext != NULL)	pNext = new DNode<T>(*(DNode<T>*)Node.pNext);
+	//if (Node.pNext != NULL)	pNext = new DNode<T>(*(DNode<T>*)Node.pNext); // Рекурсия
 }
 
 template <class T>
