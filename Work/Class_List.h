@@ -37,7 +37,7 @@ private:
 public:
 	SingleDirList<T>() {};
 	SingleDirList<T>(const SingleDirList<T>& List);
-	~SingleDirList<T>() {};
+	~SingleDirList<T>();
 
 	DNode<T>* AddFirst(T data);
 	DNode<T>* AddLast(T data);

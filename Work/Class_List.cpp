@@ -37,6 +37,19 @@ SingleDirList<T>::SingleDirList(const SingleDirList<T>& List)
 }
 
 template <class T>
+SingleDirList<T>::~SingleDirList()
+{
+	if (pHeader == NULL) return;
+	BaseNode* ptn = NULL;
+	while (pHeader != NULL)
+	{
+		ptn = pHeader;
+		pHeader = ptn->next;
+		delete ptn;
+	}
+}
+
+template <class T>
 DNode<T>::DNode(const DNode<T>& Node)
 {
 	data = Node.data;							 

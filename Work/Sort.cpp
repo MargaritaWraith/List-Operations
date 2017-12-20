@@ -81,7 +81,7 @@ void Merge(int* dst, int* trg, int l1, int r1, int l2, int r2)
 	if (i1 > r1 && i2 <= r2)
 		for (; i2 <= r2; i2++, j++)
 			trg[j] = dst[i2];
-	else		for (; i1 <=r1; i1++, j++)			trg[j] = dst[i1];	for (int i = l1; i <= r2; i++) cout << trg[i] << ' ';//	cout << "---merge--end---" << endl;}
+	else		for (; i1 <=r1; i1++, j++)			trg[j] = dst[i1];	for (int i = l1; i <= r2; i++) cout << trg[i] << ' ';	cout << "---merge--end---" << endl;}
 
 void Sort(int* ar, int l, int r, int* tmp)
 {

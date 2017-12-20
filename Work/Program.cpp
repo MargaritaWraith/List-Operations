@@ -18,10 +18,10 @@ int main()
 //	CheckMatrix();
 //	CheckPoint();
 //	CheckNasledovanie();
-//	CheckSingleDirList();
+	CheckSingleDirList();
 //	CheckTemp();
 
-	CheckSort();
+//	CheckSort();
 
 	cin.get();
 	cin.get();
