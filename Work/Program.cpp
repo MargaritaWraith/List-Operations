@@ -9,6 +9,7 @@
 #include"Class_List.h"
 #include "Temp.h"
 #include "Sort.h"
+#include "Struct BRT.h" // Binary Recearch Tree
 
 
 using namespace std;
@@ -18,10 +19,13 @@ int main()
 //	CheckMatrix();
 //	CheckPoint();
 //	CheckNasledovanie();
-	CheckSingleDirList();
+//	CheckSingleDirList();
 //	CheckTemp();
 
 //	CheckSort();
+	
+	CheckStructBRT();
+
 
 	cin.get();
 	cin.get();
