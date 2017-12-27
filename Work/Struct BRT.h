@@ -26,11 +26,27 @@ void rRl(const TreeNode* root);
 // Печать узла
 void PrintNode(const TreeNode* root);
 
+// Печать всех узлов
+void PrintNodes(const TreeNode* root);
+
 // Поиск в дереве
 TreeNode* FindNode(TreeNode* root, float v);
 
-//// Печать дерева
+// Печать дерева
 //void PrintTree(TreeNode* root);
+
+// Определение глубины дерева
+int DepthTree(TreeNode* root, int depth);
+
+// Поворот дерева направо
+void TurnRight(TreeNode*& root, TreeNode* node);
+
+// Поворот дерева налево
+void TurnLeft(TreeNode*& root, TreeNode* node);
+
+// Поиск родительского элемента
+TreeNode* FindParent(TreeNode* root, const TreeNode* node);
+  
 
 void CheckStructBRT();
 
