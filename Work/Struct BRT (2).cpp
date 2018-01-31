@@ -11,27 +11,39 @@ void CheckStructBRT()
 	AddNode(TestTree, 5);
 	AddNode(TestTree, 1);
 	AddNode(TestTree, 3);
-	AddNode(TestTree, 13);
+	AddNode(TestTree, 10);
 	AddNode(TestTree, 9);
-	AddNode(TestTree, 15);
+	AddNode(TestTree, 16);
 	AddNode(TestTree, 0);
+	AddNode(TestTree, 14);
+	AddNode(TestTree, 12);
+	AddNode(TestTree, 15);
+	AddNode(TestTree, 11);
+	AddNode(TestTree, 17);
+	//AddNode(TestTree, 13);
 
-
-	cout << DepthTree(TestTree, 0) << endl;
+	cout << DepthTree(TestTree, 0) << endl << endl;
 
 	PrintNodes(TestTree);
 	cout << endl;
 
-	TurnRight(FindNode(TestTree, 5));
+	/*TurnRight(FindNode(TestTree, 5));
 	PrintNodes(TestTree);
+	cout << endl;*/
 
-	//lRr(TestTree);
-	//cout << endl;
+	lRr(TestTree);
+	cout << endl;
 
-	//rRl(TestTree);
-	//cout << endl;
-	//cout<<FindNode(TestTree, 9)<<endl;
-	//cout << FindNode(TestTree, 5) << endl;
+	rRl(TestTree);
+	cout << endl;
+
+	TurnLeft(TestTree, FindNode(TestTree, 5));
+	lRr(TestTree);
+	cout << endl;
+	PrintNodes(TestTree);
+	cout << endl;
+	/*cout << FindNode(TestTree, 9) << endl;
+	cout << FindNode(TestTree, 5) << endl;*/
 	//PrintTree(TestTree);
 
 }
@@ -91,11 +103,11 @@ TreeNode* FindNode(TreeNode* root, float v)
 }
 
 // Печать дерева
-void PrintTree(TreeNode* root)
-{
-	int depth = DepthTree(root, 0);
-
-}
+//void PrintTree(TreeNode* root)
+//{
+//	int depth = DepthTree(root, 0);
+//
+//}
 
 // Определение глубины дерева
 int DepthTree(TreeNode* root, int depth)
@@ -107,20 +119,58 @@ int DepthTree(TreeNode* root, int depth)
 	return l < r ? r : l;
 }
 
-// Поворот дерева направо				 // не работает
-void TurnRight(TreeNode* node)
+// Поиск родительского элемента
+TreeNode* FindParent(TreeNode* root, const TreeNode* node)
 {
-	TreeNode* temp = node->left;
-	node->left = temp->right;
-	temp->right = node;	
+	if (root == NULL || root->left == node || root->right == node) return root;
+	TreeNode* parent = FindParent(root->left, node);
+	if (parent == NULL)
+	{
+		parent = FindParent(root->right, node);
+	}
+	return parent;
 }
 
-// Поворот дерева налево		  // не работает
-void TurnLeft(TreeNode* node)
+// Поворот дерева направо			
+void TurnRight(TreeNode*& root, TreeNode* node)
+{
+	TreeNode* temp = node->left;
+
+	if (root == node)
+	{
+		root = root->left;
+	}
+	else
+	{
+		TreeNode* parent = FindParent(root, node);
+		if (parent->left == node) parent->left = temp;
+		else parent->right = temp;
+	}
+
+	while (temp->right != NULL)
+		temp = temp->right;
+	temp->right = node;
+	node->left = NULL;
+}
+
+// Поворот дерева налево		  
+void TurnLeft(TreeNode*& root, TreeNode* node)
 {
 	TreeNode* temp = node->right;
-	node->right = temp->left;
+	if (root == node)
+	{
+		root = root->right;
+	}
+	else
+	{
+		TreeNode* parent = FindParent(root, node);
+		if (parent->right == node) parent->right = temp;
+		else parent->left = temp;
+	}
+	while (temp->left != NULL)
+		temp = temp->left;
 	temp->left = node;
+	node->right = NULL;
 }
 
 // Печать всех узлов
@@ -131,3 +181,4 @@ void PrintNodes(const TreeNode* root)
 	PrintNodes(root->left);
 	PrintNodes(root->right);
 }
+
